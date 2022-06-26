@@ -1,12 +1,11 @@
 import Image from "next/image";
 import SessionBoxOne from "./SessionBoxOne";
-
 import SessionBoxTwo from "./SessionBoxTwo";
-import SessionOne from "../../assets/SessionOne.svg";
-import SessionTwo from "../../assets/SessionTwo.svg";
-import SessionThree from "../../assets/SessionThree.svg";
-import SessionFour from "../../assets/SessionFour.svg";
-import Logo from "../../assets/Logo.svg";
+import SessionOne from "../../assets/svg/SessionOne.svg";
+import SessionTwo from "../../assets/svg/SessionTwo.svg";
+import SessionThree from "../../assets/svg/SessionThree.svg";
+import SessionFour from "../../assets/svg/SessionFour.svg";
+import Logo from "../../assets/svg/Logo.svg";
 import * as S from "./styled";
 
 const MainPage = () => {
