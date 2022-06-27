@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import SelectPage from "../components/SelectPage/SelectPage";
+import LoginPage from "../components/LoginPage/LoginPage";
 
 const Home: NextPage = () => {
-  return <SelectPage />;
+  return <LoginPage />;
 };
 
 export default Home;
