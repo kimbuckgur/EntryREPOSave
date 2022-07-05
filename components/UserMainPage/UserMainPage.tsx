@@ -1,13 +1,23 @@
+import { useState } from "react";
+import Image from "next/image";
 import * as S from "./styled";
 import DocumentPlus from "./DocumentPlus";
 import Document from "./Document";
 import SideBar from "./SideBar";
+import pdf from "../../assets/svg/pdf.svg";
+import copy from "../../assets/svg/copy.svg";
+import messege from "../../assets/svg/messege.svg";
 
 const UserMainPage = () => {
+  const [examine, setExamine] = useState<boolean>(false);
+  const [waitingDocument, setWaitingDocument] = useState<boolean>(false);
+  const [publicDocument, setPublicDocument] = useState<boolean>(false);
+
   return (
     <S.UserMainContainer>
       <SideBar />
       <S.DoucumentContainer>
+        {examine ? <S.ExamineBox>검토중··</S.ExamineBox> : <></>}
         <S.TagLayout>
           <S.TagBox>
             <S.DocumentTitle>대표분야</S.DocumentTitle>
@@ -31,13 +41,44 @@ const UserMainPage = () => {
           <Document />
         </S.DocumentsLayout>
         <S.DocumentsLayout>
-          <S.DocumentBox marginL="0px">
+          <S.DocumentBox marginL="0vw">
             <S.DocumentText>공개 요청 대기 문서</S.DocumentText>
-            <Document />
+            {waitingDocument ? (
+              <>
+                <S.DocumentLayout>
+                  <Document />
+                  <S.DocumentSignal>
+                    <Image src={messege} />
+                  </S.DocumentSignal>
+                </S.DocumentLayout>
+              </>
+            ) : (
+              <S.NonDocumentText>
+                대기 문서가 존재하지 않습니다
+              </S.NonDocumentText>
+            )}
           </S.DocumentBox>
-          <S.DocumentBox marginL="17vw">
-            <S.DocumentText>공개 요청 대기 문서</S.DocumentText>
-            <Document />
+          <S.DocumentBox marginL="13.6vw">
+            <S.DocumentText>공개 문서</S.DocumentText>
+            {publicDocument ? (
+              <>
+                <S.DocumentLayout>
+                  <Document />
+                  <S.DocumentButtonBox>
+                    <S.DocumentButton>
+                      <Image src={pdf} />
+                    </S.DocumentButton>
+                    <S.DocumentButton>
+                      <Image src={copy} />
+                    </S.DocumentButton>
+                  </S.DocumentButtonBox>
+                </S.DocumentLayout>
+              </>
+            ) : (
+              <S.NonDocumentText>
+                공개 문서가 존재하지 않습니다
+              </S.NonDocumentText>
+            )}
           </S.DocumentBox>
         </S.DocumentsLayout>
       </S.DoucumentContainer>
