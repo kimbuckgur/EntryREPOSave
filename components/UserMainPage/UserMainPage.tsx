@@ -9,9 +9,9 @@ import copy from "../../assets/svg/copy.svg";
 import messege from "../../assets/svg/messege.svg";
 
 const UserMainPage = () => {
-  const [examine, setExamine] = useState<boolean>(false);
-  const [waitingDocument, setWaitingDocument] = useState<boolean>(false);
-  const [publicDocument, setPublicDocument] = useState<boolean>(false);
+  const [examine, setExamine] = useState<boolean>(true);
+  const [waitingDocument, setWaitingDocument] = useState<boolean>(true);
+  const [publicDocument, setPublicDocument] = useState<boolean>(true);
 
   return (
     <S.UserMainContainer>

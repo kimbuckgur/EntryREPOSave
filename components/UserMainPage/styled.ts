@@ -139,7 +139,6 @@ export const DocumentText = styled.p`
   font-size: 22px;
   line-height: 28px;
   color: #343434;
-
   margin: 0px;
   margin-top: 5vh;
   margin-bottom: 4vh;
@@ -158,11 +157,9 @@ export const DocumentButtonBox = styled.div`
 
 export const DocumentButton = styled.button`
   cursor: pointer;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 50px;
   height: 50px;
   background: #ffffff;
@@ -225,7 +222,7 @@ export const testTag = styled.div`
 export const DocumentsLayout = styled.div`
   display: flex;
   align-items: flex-start;
-  gap: 2vw;
+  gap: 1.5vw;
 `;
 
 export const Documents = styled.div`
